@@ -75,7 +75,7 @@ We selected a combination of single-hop and multi-hop datasets, including *Natur
 
 To ensure the quality and diversity of the training samples, we developed a fine-grained filtering methodology for both questions and responses. Specifically:
 
-1. **Question Filtering**
+**1. Question Filtering**
     
     The filtering criteria include:
     
