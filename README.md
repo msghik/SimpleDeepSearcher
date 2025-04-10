@@ -133,7 +133,7 @@ For the selected open-source dataset, we first apply the proposed question filte
 - **Consistent Improvements Across Model Scales**: CyberSearcher consistently improves performance across a range of model sizes, including both smaller models such as Qwen2.5-7B-Instruct and larger models like Qwen2.5-32B-Instruct, DeepSeek-R1-Distill-Qwen-7B, and QwQ-32B. This suggests that our proposed framework of distillation and self-distillation generalizes effectively across different model capacities.
 - **Enhanced Retrieval Efficiency and Reasoning Compactness**: The trained models exhibit more efficient search invocation and streamlined reasoning processes. CyberSearcher not only improves the model's ability to decompose complex queries and generate precise and effective sub-queries, but also significantly reduces redundant inference. The resulting decision pathways are more concise, transparent, and coherent.
 
-# Analysis of Supervised Fine-Tuning (SFT)
+# 🌟 Analysis of Supervised Fine-Tuning (SFT)
 ## Impact of Data Filtering
 We first compare the performance of the QwQ-32B model trained on a strictly filtered dataset of 871 samples against a model trained on a larger but unfiltered dataset of 2,699 samples. The experimental results indicate the following:
 
@@ -156,7 +156,7 @@ Since retrieved webpage content is often lengthy and contains substantial noise,
   <img src="./assets/sft_analysis_3.png" alt="Example Image" width="650"/>
 </p>
 
-# Continued RL Training Based on a 7B-SFT Model
+# 🌟 Continued RL Training Based on a 7B-SFT Model
 ## Settings
 1. **SFT Dataset:** It is worth noting that despite our efforts to limit the frequency of analytical discourse markers (e.g., Alternatively, Wait, Hmm) in the distilled data, the 7B model still exhibited repetitive generation and overthinking tendencies after distillation. These behaviors led to slower convergence during reinforcement learning. To address this, we performed a second round of data filtering on the original 0.8k dataset and removed samples containing the term "Alternatively", resulting in a 0.5k subset used for supervised fine-tuning (SFT) and subsequent distillation. While this reduction may lead to a slight degradation in reasoning ability, we are currently training an RL model based on the full 0.8k dataset. For updates, please refer to our [repository](https://github.com/RUCAIBox/CyberSearcher).
 2. **RL Dataset:** The SFT-tuned model was used to perform rollout sampling on the training sets of 2Wiki and HotpotQA. For each question, 8 rollouts were generated. We selected 2,480 samples from those questions with 1 to 6 correct answers to construct the RL training dataset.
