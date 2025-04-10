@@ -18,7 +18,7 @@
 ![Example Image](./assets/CyberLog.jpg)
 </center> -->
 <p align="center">
-  <img src="./assets/CyberLog.jpg" alt="Example Image" width="400"/>
+  <img src="./assets/CyberLog.jpg" alt="Example Image" width="550"/>
 </p>
 
 
@@ -28,8 +28,8 @@
 # 💡 Overview
 
 <p align="center">
-  <img src="./assets/main_figure_1.png" alt="Image 1" width="300"/>
-  <img src="./assets/main_figure_2.png" alt="Image 2" width="300"/>
+  <img src="./assets/main_figure_1.png" alt="Image 1" width="450"/>
+  <img src="./assets/main_figure_2.png" alt="Image 2" width="450"/>
 </p>
 
 Recently, researchers begin to explore methods for enhancing LLMs’ complex reasoning capabilities in information retrieval tasks. These approaches typically leverage reinforcement learning to stimulate autonomous retrieval during the reasoning process. Notably, such methods require only the raw questions as input, without the need for high-quality answer supervision. While effective in improving model performance, reinforcement learning incurs substantial training overhead. Moreover, many current approaches rely on local retrieval databases; transitioning to web-based search systems further reduces training efficiency. Additionally, methods employing online search often demand significant computational resources, hindering the broader adoption of complex reasoning-based retrieval systems. This motivates the need for a solution that enables powerful reasoning with minimal training cost.
@@ -95,7 +95,7 @@ To ensure the quality and diversity of the training samples, we developed a fine
 </center> -->
 
 <p align="center">
-  <img src="./assets/filter_algm.png" alt="Example Image" width="400"/>
+  <img src="./assets/filter_algm.png" alt="Example Image" width="500"/>
 </p>
 **2. Response Filtering**
 
@@ -120,13 +120,13 @@ For the selected open-source dataset, we first apply the proposed question filte
 
 ## Main Results
 
-<div style="text-align: center;">
-  <img src="./assets/main_table_1.png" alt="Example Image" width="550"/>
-</div>
 
-<div style="text-align: center;">
-  <img src="./assets/main_table_1.png" alt="Example Image" width="550"/>
-</div>
+<p align="center">
+  <img src="./assets/main_table_1.png" alt="Example Image" width="600"/>
+</p>
+<p align="center">
+  <img src="./assets/main_table_2.png" alt="Example Image" width="600"/>
+</p>
 
 - **Significant Overall Performance Gains**: Compared with existing baseline approaches such as Directly Gen, Standard RAG, and Search-o1, CyberSearcher demonstrates a clear performance advantage across all five QA benchmarks.
 - **Maintaining Generalization Ability**: Among the evaluated benchmarks, 2WikiMultihopQA and Musique serve as in-domain datasets, while Bamboogle, Frames, and GAIA represent out-of-domain scenarios. Our method achieves superior generalization, particularly on the more challenging Frames and GAIA datasets, significantly outperforming other existing methods. These results highlight the robustness and strong generalization capability of the trained model.
