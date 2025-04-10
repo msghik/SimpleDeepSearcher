@@ -97,6 +97,7 @@ To ensure the quality and diversity of the training samples, we developed a fine
 <p align="center">
   <img src="./assets/filter_algm.png" alt="Example Image" width="500"/>
 </p>
+
 **2. Response Filtering**
 
 We impose strict constraints on both the format and content of generated responses, retaining only those that satisfy all predefined criteria.
