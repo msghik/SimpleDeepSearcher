@@ -10,9 +10,16 @@
 
 </div>
 
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
   <img src="./assets/CyberLog.jpg" alt="Example Image" width="400"/>
-</div>
+</div> -->
+<!-- <center>
+
+![Example Image](./assets/CyberLog.jpg)
+</center> -->
+<p align="center">
+  <img src="./assets/CyberLog.jpg" alt="Example Image" width="400"/>
+</p>
 
 
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
@@ -76,7 +83,11 @@ To ensure the quality and diversity of the training samples, we developed a fine
 <div style="text-align: center;">
   <img src="./assets/filter_algm.png" alt="Example Image" width="400"/>
 </div>
+<!-- <center>
 
+![Example Image](./assets/filter_algm.png)
+
+</center> -->
 **2. Response Filtering**
 
 We impose strict constraints on both the format and content of generated responses, retaining only those that satisfy all predefined criteria.
