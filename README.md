@@ -27,6 +27,11 @@
 
 # 💡 Overview
 
+<p align="center">
+  <img src="./assets/main_figure_1.png" alt="Image 1" width="300"/>
+  <img src="./assets/main_figure_2.png" alt="Image 2" width="300"/>
+</p>
+
 Recently, researchers begin to explore methods for enhancing LLMs’ complex reasoning capabilities in information retrieval tasks. These approaches typically leverage reinforcement learning to stimulate autonomous retrieval during the reasoning process. Notably, such methods require only the raw questions as input, without the need for high-quality answer supervision. While effective in improving model performance, reinforcement learning incurs substantial training overhead. Moreover, many current approaches rely on local retrieval databases; transitioning to web-based search systems further reduces training efficiency. Additionally, methods employing online search often demand significant computational resources, hindering the broader adoption of complex reasoning-based retrieval systems. This motivates the need for a solution that enables powerful reasoning with minimal training cost.
 
 **To this end, we propose *Cyber-Searcher*, a framework designed to stimulate autonomous retrieval during complex reasoning via knowledge distillation and self-distillation. The goal is to achieve efficient and effective training using only a small amount of data.** Despite its conceptual simplicity, constructing high-quality training data presents two key challenges. On the query side, existing open-source datasets often suffer from issues such as imbalanced topic distributions, repetitive structures, and insufficient complexity, limiting their utility in eliciting deep retrieval behavior. On the response side, solving deep retrieval tasks requires effectively decomposing complex queries while avoiding invalid reasoning steps and overthinking—objectives that are fundamentally distinct from those in traditional mathematical or logical reasoning tasks.
@@ -80,14 +85,18 @@ To ensure the quality and diversity of the training samples, we developed a fine
     
     We utilized QwQ-32B to annotate each question with its domain and extracted keywords. The number of specific interrogative words in each question was also quantified. The detailed question filtering procedure is illustrated in following Figure:
     
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
   <img src="./assets/filter_algm.png" alt="Example Image" width="400"/>
-</div>
+</div> -->
 <!-- <center>
 
 ![Example Image](./assets/filter_algm.png)
 
 </center> -->
+
+<p align="center">
+  <img src="./assets/filter_algm.png" alt="Example Image" width="400"/>
+</p>
 **2. Response Filtering**
 
 We impose strict constraints on both the format and content of generated responses, retaining only those that satisfy all predefined criteria.
@@ -112,14 +121,12 @@ For the selected open-source dataset, we first apply the proposed question filte
 ## Main Results
 
 <div style="text-align: center;">
-  <img src="./assets/main_table_1.png" alt="Example Image" width="500"/>
+  <img src="./assets/main_table_1.png" alt="Example Image" width="550"/>
 </div>
 
 <div style="text-align: center;">
-  <img src="./assets/main_table_1.png" alt="Example Image" width="500"/>
+  <img src="./assets/main_table_1.png" alt="Example Image" width="550"/>
 </div>
-
-
 
 - **Significant Overall Performance Gains**: Compared with existing baseline approaches such as Directly Gen, Standard RAG, and Search-o1, CyberSearcher demonstrates a clear performance advantage across all five QA benchmarks.
 - **Maintaining Generalization Ability**: Among the evaluated benchmarks, 2WikiMultihopQA and Musique serve as in-domain datasets, while Bamboogle, Frames, and GAIA represent out-of-domain scenarios. Our method achieves superior generalization, particularly on the more challenging Frames and GAIA datasets, significantly outperforming other existing methods. These results highlight the robustness and strong generalization capability of the trained model.
@@ -133,8 +140,18 @@ We first compare the performance of the QwQ-32B model trained on a strictly filt
 - The model trained on the strictly filtered 871 samples consistently outperforms the one trained on the unfiltered 2,699 samples, suggesting that high-quality data has a more pronounced effect in enhancing the model’s generalization capabilities.
 - Compared to the model trained on the unfiltered data, the one trained on the strictly filtered dataset exhibits a higher average number of search steps, but significantly fewer occurrences of alternative reasoning paths and shorter response lengths. This indicates that the filtered data is more effective in prompting the model to decompose complex queries efficiently while avoiding unnecessary reasoning steps and overthinking.
 
+<div style="text-align: center;">
+  <img src="./assets/sft_analysis_1.png" alt="Example Image" width="550"/>
+</div>
+<div style="text-align: center;">
+  <img src="./assets/sft_analysis_2.png" alt="Example Image" width="550"/>
+</div>
+
 ## Impact of Webpage Summarization Models
 Since retrieved webpage content is often lengthy and contains substantial noise, directly inputting such content into the model for reasoning can easily exceed the context window and introduce irrelevant information that impairs reasoning performance. Therefore, it is necessary to summarize and condense the webpage content beforehand. We conducted a comparative analysis between using the model's own summarization capabilities and employing GPT-4o-mini as an external summarization model. Experimental findings demonstrate that the choice of summarization model has a significant impact on downstream performance. For the SFT-tuned Qwen-7B-Instruct model, using GPT-4o-mini as the summarizer consistently outperforms the model's own summaries across all datasets, yielding an average improvement of approximately 10 percentage points. A similar trend is observed for SFT-tuned Qwen-32B-Instruct on all datasets except 2Wiki. In contrast, for the SFT-tuned QwQ-32B model, self-generated summaries result in better performance.
+<div style="text-align: center;">
+  <img src="./assets/sft_analysis_3.png" alt="Example Image" width="550"/>
+</div>
 
 # Continued RL Training Based on a 7B-SFT Model
 ## Settings
@@ -149,10 +166,21 @@ Since retrieved webpage content is often lengthy and contains substantial noise,
         4. **No Boxed Answers:** The model performs more than 8 retrieval steps, or the analytical content between two retrievals exceeds 8,096 tokens.
 ## Evaluation
 As shown in the table below, models distilled with the 0.5k dataset underperform those using the 0.8k dataset in terms of baseline reasoning ability. However, reinforcement learning significantly boosts performance in both cases, demonstrating its capacity to enhance the model’s autonomous retrieval abilities. RL training for the model distilled with the full 0.8k dataset is ongoing. Please refer to our repository for further updates.
+<div style="text-align: center;">
+  <img src="./assets/rl_analysis_1.png" alt="Example Image" width="550"/>
+</div>
 
 ## Analysis
 ### Continuous Increase in Completion Rate and Reward, Gradual Decrease in Format Penalty
 As shown in the figure below, all format penalties gradually decrease as training progresses, while both answer reward and total reward exhibit an overall upward trend. The completion rate also increases correspondingly. These results indicate that reinforcement learning is effective in enhancing the model's ability to generate responses with higher accuracy while adhering to the required formatting standards.
+
+<div style="text-align: center;">
+  <img src="./assets/rl_analysis_2.png" alt="Example Image" width="500"/>
+</div>
+
+<div style="text-align: center;">
+  <img src="./assets/rl_analysis_3.png" alt="Example Image" width="500"/>
+</div>
 
 ### Significant Reduction in Response Length and Slight Decrease in Retrieval Frequency
 As illustrated in the figure below, 0.8k-sft-rl refers to the model fine-tuned with 0.8k instances via supervised fine-tuning (SFT) as the backbone for reinforcement learning (RL); 0.5k-sft-rl uses a backbone trained with 0.5k SFT instances; 0.5k-sft-rl-no-len-punishment shares the same backbone as 0.5k-sft-rl but removes the “Too Many Analytical Terms” penalty during RL.
@@ -161,6 +189,10 @@ Several observations can be made:
 
 1. Models trained with 0.8k-sft as the RL backbone generally receive lower rewards. This is primarily due to the fact that, despite explicit constraints on the number of analytical terms in the distilled data, the 7B model still exhibits overthinking tendencies post-distillation, often triggering the “Too Many Analytical Terms” penalty and incurring format-related deductions.
 2. Regardless of whether the reward model incorporates the “Too Many Analytical Terms” penalty, the overall trend shows a consistent reduction in response length. This suggests that reinforcement learning effectively guides the model to produce more concise and precise answers. However, this gain in succinctness may come at the expense of the distilled model's original reasoning capabilities.
+
+<div style="text-align: center;">
+  <img src="./assets/rl_analysis_4.png" alt="Example Image" width="500"/>
+</div>
 
 # 🏃 Quick Start
 Coming Soon...
