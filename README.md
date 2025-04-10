@@ -208,7 +208,7 @@ Please kindly cite our report if they are helpful for your research.
 ```
 @article{CyberSearcher,
   title={CyberSearcher: Realizing simple yet effective web search with denoised sampling},
-  author={Shuang Sun*, Huatong Song*, Yuhao Wang, Ruiyang Ren, Jinhao Jiang, Lei Fang, Zhongyuan Wang, Wayne Xin Zhao, Ji-Rong Wen},
+  author={Shuang Sun*, Huatong Song*, Yuhao Wang, Ruiyang Ren, Jinhao Jiang, Junjie Zhang, Lei Fang, Zhongyuan Wang, Wayne Xin Zhao, Ji-Rong Wen},
   url={https://github.com/RUCAIBox/CyberSearcher},
   year={2025}
 }
