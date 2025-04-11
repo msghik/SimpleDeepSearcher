@@ -71,13 +71,13 @@ To ensure the quality and diversity of the training samples, we developed a fine
 
 **1. Question Filtering**
 
-    The filtering criteria include:
+**Filtering criteria include:**
 
-    - **Domain Diversity**: Ensuring that questions span across a wide range of knowledge domains.
-    - **Keyword Diversity**: Keywords refer to the key entities, attributes, and relations mentioned in the question. This helps reduce redundancy and enhances the diversity of question patterns.
-    - **Coverage of Specific Interrogative Words**: Increasing the complexity of the questions by emphasizing the use of varied interrogative terms.
+- **Domain Diversity**: Ensuring that questions span across a wide range of knowledge domains.
+- **Keyword Diversity**: Keywords refer to the key entities, attributes, and relations mentioned in the question. This helps reduce redundancy and enhances the diversity of question patterns.
+- **Coverage of Specific Interrogative Words**: Increasing the complexity of the questions by emphasizing the use of varied interrogative terms.
 
-    We utilized QwQ-32B to annotate each question with its domain and extracted keywords. The number of specific interrogative words in each question was also quantified. The detailed question filtering procedure is illustrated in following Figure:
+We utilized QwQ-32B to annotate each question with its domain and extracted keywords. The number of specific interrogative words in each question was also quantified. The detailed question filtering procedure is illustrated in following Figure:
 
 
 <p align="center">
