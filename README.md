@@ -1,5 +1,5 @@
 
-<h1 align="center"> SimpleDeepSearcher: Realizing Simple yet Effective Web Search with Data Engineering</a></h1>
+<h1 align="center"> SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a></h1>
 
 
 <div align="center">
@@ -193,7 +193,7 @@ Please kindly cite our report if they are helpful for your research.
 
 ```
 @article{SimpleDeepSearcher,
-  title={SimpleDeepSearcher: Realizing Simple yet Effective Web Search with Data Engineering},
+  title={SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis},
   author={Shuang Sun*, Huatong Song*, Yuhao Wang, Ruiyang Ren, Jinhao Jiang, Junjie Zhang, Lei Fang, Zhongyuan Wang, Wayne Xin Zhao, Ji-Rong Wen},
   url={https://github.com/RUCAIBox/SimpleDeepSearcher},
   year={2025}
