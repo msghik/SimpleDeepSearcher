@@ -70,15 +70,15 @@ We selected a combination of single-hop and multi-hop datasets, including *Natur
 To ensure the quality and diversity of the training samples, we developed a fine-grained filtering methodology for both questions and responses. Specifically:
 
 **1. Question Filtering**
-    
+
     The filtering criteria include:
-    
+
     - **Domain Diversity**: Ensuring that questions span across a wide range of knowledge domains.
     - **Keyword Diversity**: Keywords refer to the key entities, attributes, and relations mentioned in the question. This helps reduce redundancy and enhances the diversity of question patterns.
     - **Coverage of Specific Interrogative Words**: Increasing the complexity of the questions by emphasizing the use of varied interrogative terms.
-    
+
     We utilized QwQ-32B to annotate each question with its domain and extracted keywords. The number of specific interrogative words in each question was also quantified. The detailed question filtering procedure is illustrated in following Figure:
-  
+
 
 <p align="center">
   <img src="./assets/filter_algm.png" alt="Example Image" width="500"/>
@@ -109,10 +109,10 @@ For the selected open-source dataset, we first apply the proposed question filte
 
 
 <p align="center">
-  <img src="./assets/main_table_1.png" alt="Example Image" width="600"/>
+  <img src="./assets/benchmark_table_1.png" alt="Example Image" width="600"/>
 </p>
 <p align="center">
-  <img src="./assets/main_table_2.png" alt="Example Image" width="600"/>
+  <img src="./assets/benchmark_table_2.png" alt="Example Image" width="600"/>
 </p>
 
 - **Significant Overall Performance Gains**: Compared with existing baseline approaches such as Directly Gen, Standard RAG, and Search-o1, SimpleDeepSearcher demonstrates a clear performance advantage across all five QA benchmarks.
