@@ -1,24 +1,18 @@
 
-<h1 align="center"> CyberSearcher: Realizing simple yet effective web search with denoised sampling</a></h1>
+<h1 align="center"> SimpleDeepSearcher: Realizing Simple yet Effective Web Search with Data Engineering</a></h1>
 
 
 <div align="center">
-<a href="https://github.com/RUCAIBox/CyberSearcher/blob/main/LICENSE"><img src="https://img.shields.io/badge/Code_License-MIT-blue" alt="license"></a>
-<a href="https://github.com/RUCAIBox/CyberSearcher/blob/main/LICENSE"><img src="https://img.shields.io/badge/Model_License-MIT-bluduie" alt="license"></a>
+<a href="https://github.com/RUCAIBox/SimpleDeepSearcher/blob/main/LICENSE"><img src="https://img.shields.io/badge/Code_License-MIT-blue" alt="license"></a>
+<a href="https://github.com/RUCAIBox/SimpleDeepSearcher/blob/main/LICENSE"><img src="https://img.shields.io/badge/Model_License-MIT-bluduie" alt="license"></a>
 <a href="https://huggingface.co/XXsongLALA"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue?color=8A2BE2"></a>
 <a href="https://arxiv.org/pdf/2503.05592" target="_blank"><img src=https://img.shields.io/badge/arXiv-b5212f.svg?logo=arxiv></a>
 
 </div>
 
-<!-- <div style="text-align: center;">
-  <img src="./assets/CyberLog.jpg" alt="Example Image" width="400"/>
-</div> -->
-<!-- <center>
 
-![Example Image](./assets/CyberLog.jpg)
-</center> -->
 <p align="center">
-  <img src="./assets/CyberLog.jpg" alt="Example Image" width="550"/>
+  <img src="./assets/SimpleDeepSearcherLog.jpg" alt="Example Image" width="550"/>
 </p>
 
 
@@ -34,27 +28,27 @@
 
 Recently, researchers begin to explore methods for enhancing LLMs’ complex reasoning capabilities in information retrieval tasks. These approaches typically leverage reinforcement learning to stimulate autonomous retrieval during the reasoning process. Notably, such methods require only the raw questions as input, without the need for high-quality answer supervision. While effective in improving model performance, reinforcement learning incurs substantial training overhead. Moreover, many current approaches rely on local retrieval databases; transitioning to web-based search systems further reduces training efficiency. Additionally, methods employing online search often demand significant computational resources, hindering the broader adoption of complex reasoning-based retrieval systems. This motivates the need for a solution that enables powerful reasoning with minimal training cost.
 
-**To this end, we propose *Cyber-Searcher*, a framework designed to stimulate autonomous retrieval during complex reasoning via knowledge distillation and self-distillation. The goal is to achieve efficient and effective training using only a small amount of data.** Despite its conceptual simplicity, constructing high-quality training data presents two key challenges. On the query side, existing open-source datasets often suffer from issues such as imbalanced topic distributions, repetitive structures, and insufficient complexity, limiting their utility in eliciting deep retrieval behavior. On the response side, solving deep retrieval tasks requires effectively decomposing complex queries while avoiding invalid reasoning steps and overthinking—objectives that are fundamentally distinct from those in traditional mathematical or logical reasoning tasks.
+**To this end, we propose *SimpleDeepSearcher*, a framework designed to stimulate autonomous retrieval during complex reasoning via knowledge distillation and self-distillation. The goal is to achieve efficient and effective training using only a small amount of data.** Despite its conceptual simplicity, constructing high-quality training data presents two key challenges. On the query side, existing open-source datasets often suffer from issues such as imbalanced topic distributions, repetitive structures, and insufficient complexity, limiting their utility in eliciting deep retrieval behavior. On the response side, solving deep retrieval tasks requires effectively decomposing complex queries while avoiding invalid reasoning steps and overthinking—objectives that are fundamentally distinct from those in traditional mathematical or logical reasoning tasks.
 
 To address these challenges, we first perform fine-grained filtering of existing open-source datasets based on multiple dimensions including domain coverage, structural variety, and question complexity. This ensures that the selected queries exhibit diverse domains and structures, as well as a balanced difficulty distribution. Next, we perform rollout sampling using large reasoning models in a real-world retrieval environment. The resulting traces are then filtered again based on criteria such as format, subquery quality, question difficulty, and reasoning path integrity, in order to eliminate redundant reasoning. The curated data is subsequently used to train multiple models, enabling us to explore the potential of distillation techniques in fostering autonomous retrieval capabilities.
 
-**We evaluate our proposed method on five challenging benchmarks—2WikiMultiHopQA, Bamboogle, Musique, FRAMES, and GAIA—and our results demonstrate that *Cyber-Searcher* consistently outperforms a range of recent state-of-the-art baselines.**
+**We evaluate our proposed method on five challenging benchmarks—2WikiMultiHopQA, Bamboogle, Musique, FRAMES, and GAIA—and our results demonstrate that *SimpleDeepSearcher* consistently outperforms a range of recent state-of-the-art baselines.**
 
 **We release all training and inference code, along with model checkpoints. Additionally, we provide two highly efficient supervised fine-tuning datasets of 0.5k and 0.8k examples. The 0.5k dataset features more direct reasoning paths, while the 0.8k dataset includes richer reflection and rethinking processes. A detailed technical report will be released in the near future.**
 
 - **Models**:
-    - Qwen-7B-CyberSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-CyberSearcher
-    - Qwen-32B-CyberSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-CyberSearcher
-    - Dpsk-Distilled-Qwen-32B-CyberSearcher: https://huggingface.co/XXsongLALA/Dpsk-Distilled-Qwen-32B-CyberSearcher
-    - QwQ-32B-CyberSearcher: https://huggingface.co/XXsongLALA/QwQ-32B-CyberSearcher
+    - Qwen-7B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-SimpleDeepSearcher
+    - Qwen-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-SimpleDeepSearcher
+    - Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher
+    - QwQ-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/QwQ-32B-SimpleDeepSearcher
 - **Training Data**:
     - 0.5k: https://huggingface.co/datasets/XXsongLALA/0.5k-sft-data
     - 0.8k: https://huggingface.co/datasets/XXsongLALA/0.8k-sft-data
-- **GitHub**: https://github.com/RUCAIBox/CyberSearcher
+- **GitHub**: https://github.com/RUCAIBox/SimpleDeepSearcher
 - **Notion**:
 
 # ✨ Key Insights
-1. **Data Generation Based on Real-World Web Environments**: We design a large-scale data generation pipeline grounded in authentic open-web environments, enhancing the diversity and realism of training corpora. This significantly improves the model’s ability to retrieve and integrate information in complex search tasks.
+1. **Data Synthesis Based on Real-World Web Environments**: We design a large-scale data synthesis pipeline grounded in authentic open-web environments, enhancing the diversity and realism of training corpora. This significantly improves the model’s ability to retrieve and integrate information in complex search tasks.
 2. **Rigorous Data Filtering Strategy**: We introduce a task-specific QA pair filtering method tailored for search-oriented training, enabling fine-grained selection of high-quality training samples.
 3. **Efficient Performance Boost with Limited Data**: Using only 871 distilled examples, our 7B-scale model surpasses existing models trained via reinforcement learning. Notably, Qwen-32B-Instruct approaches the performance of QwQ-32B, which possesses built-in retrieval capabilities, while also enabling further performance gains for QwQ-32B itself.
 4. **Generalization to OOD Evaluation Sets**: Training on conventional multi-hop datasets leads to strong generalization capabilities on out-of-distribution (OOD) benchmarks, including FRAMES and GAIA.
@@ -66,7 +60,7 @@ To address these challenges, we first perform fine-grained filtering of existing
 
 Specifically, instead of utilizing a controlled and curated document collection, our system operates within the open web—an inherently noisy, diverse, and constantly evolving information space. Web content varies widely in format (e.g., encyclopedic entries, forums, news articles, advertisements), quality, and structure, often consisting of unstructured text and heterogeneous linguistic styles. Such a complex environment more accurately reflects real-world user conditions and imposes greater demands on the model's ability to extract, synthesize, and reason over information.
 
-Against this backdrop, we develop an automated data generation pipeline based on the popular "web search – content filtering – information summarization – answer synthesis" framework. Leveraging a strong reasoning model (QwQ-32B), we conduct large-scale rollouts in the real web environment: for each curated question, the model generates multiple high-quality answers grounded in search engine results. This process requires the model not only to construct precise and relevant subqueries, but also to identify and extract salient information from noisy, redundant, or even contradictory web sources, thereby producing accurate, concise, and well-structured outputs.
+Against this backdrop, we develop an automated data synthesis pipeline based on the popular "web search – content filtering – information summarization – answer synthesis" framework. Leveraging a strong reasoning model (QwQ-32B), we conduct large-scale rollouts in the real web environment: for each curated question, the model generates multiple high-quality answers grounded in search engine results. This process requires the model not only to construct precise and relevant subqueries, but also to identify and extract salient information from noisy, redundant, or even contradictory web sources, thereby producing accurate, concise, and well-structured outputs.
 
 Through this method of data synthesis grounded in real-world web contexts, we significantly improve the diversity and authenticity of training samples. This, in turn, provides more practically aligned supervision signals for fine-tuning, and offers a novel pathway for enhancing the retrieval capabilities of large language models in open-domain question answering tasks.
 
@@ -84,15 +78,7 @@ To ensure the quality and diversity of the training samples, we developed a fine
     - **Coverage of Specific Interrogative Words**: Increasing the complexity of the questions by emphasizing the use of varied interrogative terms.
     
     We utilized QwQ-32B to annotate each question with its domain and extracted keywords. The number of specific interrogative words in each question was also quantified. The detailed question filtering procedure is illustrated in following Figure:
-    
-<!-- <div style="text-align: center;">
-  <img src="./assets/filter_algm.png" alt="Example Image" width="400"/>
-</div> -->
-<!-- <center>
-
-![Example Image](./assets/filter_algm.png)
-
-</center> -->
+  
 
 <p align="center">
   <img src="./assets/filter_algm.png" alt="Example Image" width="500"/>
@@ -129,10 +115,10 @@ For the selected open-source dataset, we first apply the proposed question filte
   <img src="./assets/main_table_2.png" alt="Example Image" width="600"/>
 </p>
 
-- **Significant Overall Performance Gains**: Compared with existing baseline approaches such as Directly Gen, Standard RAG, and Search-o1, CyberSearcher demonstrates a clear performance advantage across all five QA benchmarks.
+- **Significant Overall Performance Gains**: Compared with existing baseline approaches such as Directly Gen, Standard RAG, and Search-o1, SimpleDeepSearcher demonstrates a clear performance advantage across all five QA benchmarks.
 - **Maintaining Generalization Ability**: Among the evaluated benchmarks, 2WikiMultihopQA and Musique serve as in-domain datasets, while Bamboogle, Frames, and GAIA represent out-of-domain scenarios. Our method achieves superior generalization, particularly on the more challenging Frames and GAIA datasets, significantly outperforming other existing methods. These results highlight the robustness and strong generalization capability of the trained model.
-- **Consistent Improvements Across Model Scales**: CyberSearcher consistently improves performance across a range of model sizes, including both smaller models such as Qwen2.5-7B-Instruct and larger models like Qwen2.5-32B-Instruct, DeepSeek-R1-Distill-Qwen-7B, and QwQ-32B. This suggests that our proposed framework of distillation and self-distillation generalizes effectively across different model capacities.
-- **Enhanced Retrieval Efficiency and Reasoning Compactness**: The trained models exhibit more efficient search invocation and streamlined reasoning processes. CyberSearcher not only improves the model's ability to decompose complex queries and generate precise and effective sub-queries, but also significantly reduces redundant inference. The resulting decision pathways are more concise, transparent, and coherent.
+- **Consistent Improvements Across Model Scales**: SimpleDeepSearcher consistently improves performance across a range of model sizes, including both smaller models such as Qwen2.5-7B-Instruct and larger models like Qwen2.5-32B-Instruct, DeepSeek-R1-Distill-Qwen-7B, and QwQ-32B. This suggests that our proposed framework of distillation and self-distillation generalizes effectively across different model capacities.
+- **Enhanced Retrieval Efficiency and Reasoning Compactness**: The trained models exhibit more efficient search invocation and streamlined reasoning processes. SimpleDeepSearcher not only improves the model's ability to decompose complex queries and generate precise and effective sub-queries, but also significantly reduces redundant inference. The resulting decision pathways are more concise, transparent, and coherent.
 
 # 🌟 Analysis of Supervised Fine-Tuning (SFT)
 ## Impact of Data Filtering
@@ -159,7 +145,7 @@ Since retrieved webpage content is often lengthy and contains substantial noise,
 
 # 🌟 Continued RL Training Based on a 7B-SFT Model
 ## Settings
-1. **SFT Dataset:** It is worth noting that despite our efforts to limit the frequency of analytical discourse markers (e.g., Alternatively, Wait, Hmm) in the distilled data, the 7B model still exhibited repetitive generation and overthinking tendencies after distillation. These behaviors led to slower convergence during reinforcement learning. To address this, we performed a second round of data filtering on the original 0.8k dataset and removed samples containing the term "Alternatively", resulting in a 0.5k subset used for supervised fine-tuning (SFT) and subsequent distillation. While this reduction may lead to a slight degradation in reasoning ability, we are currently training an RL model based on the full 0.8k dataset. For updates, please refer to our [repository](https://github.com/RUCAIBox/CyberSearcher).
+1. **SFT Dataset:** It is worth noting that despite our efforts to limit the frequency of analytical discourse markers (e.g., Alternatively, Wait, Hmm) in the distilled data, the 7B model still exhibited repetitive generation and overthinking tendencies after distillation. These behaviors led to slower convergence during reinforcement learning. To address this, we performed a second round of data filtering on the original 0.8k dataset and removed samples containing the term "Alternatively", resulting in a 0.5k subset used for supervised fine-tuning (SFT) and subsequent distillation. While this reduction may lead to a slight degradation in reasoning ability, we are currently training an RL model based on the full 0.8k dataset. For updates, please refer to this [repository](https://github.com/RUCAIBox/SimpleDeepSearcher).
 2. **RL Dataset:** The SFT-tuned model was used to perform rollout sampling on the training sets of 2Wiki and HotpotQA. For each question, 8 rollouts were generated. We selected 2,480 samples from those questions with 1 to 6 correct answers to construct the RL training dataset.
 3. **Reward Model:** Our reward function consists of two components: an answer reward and a format penalty.
     - The answer reward is computed as the F1 score between the predicted answer and the reference answer.
@@ -206,10 +192,10 @@ Coming Soon...
 Please kindly cite our report if they are helpful for your research.
 
 ```
-@article{CyberSearcher,
-  title={CyberSearcher: Realizing simple yet effective web search with denoised sampling},
+@article{SimpleDeepSearcher,
+  title={SimpleDeepSearcher: Realizing Simple yet Effective Web Search with Data Engineering},
   author={Shuang Sun*, Huatong Song*, Yuhao Wang, Ruiyang Ren, Jinhao Jiang, Junjie Zhang, Lei Fang, Zhongyuan Wang, Wayne Xin Zhao, Ji-Rong Wen},
-  url={https://github.com/RUCAIBox/CyberSearcher},
+  url={https://github.com/RUCAIBox/SimpleDeepSearcher},
   year={2025}
 }
 ```
