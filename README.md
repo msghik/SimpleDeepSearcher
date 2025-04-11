@@ -12,7 +12,7 @@
 
 
 <p align="center">
-  <img src="./assets/SimpleDeepSearcherLog.jpg" alt="Example Image" width="550"/>
+  <img src="./assets/simplelog.jpg" alt="Example Image" width="550"/>
 </p>
 
 
@@ -22,8 +22,8 @@
 # 💡 Overview
 
 <p align="center">
-  <img src="./assets/benchmarksfiguire_7B" alt="Image 1" width="400"/>
-  <img src="./assets/benchmarksfiguire_32B" alt="Image 2" width="400"/>
+  <img src="./assets/benchmarksfigure_7B.png" alt="Image 1" width="400"/>
+  <img src="./assets/benchmarksfigure_7B.png" alt="Image 2" width="400"/>
 </p>
 
 Recently, researchers begin to explore methods for enhancing LLMs’ complex reasoning capabilities in information retrieval tasks. These approaches typically leverage reinforcement learning to stimulate autonomous retrieval during the reasoning process. Notably, such methods require only the raw questions as input, without the need for high-quality answer supervision. While effective in improving model performance, reinforcement learning incurs substantial training overhead. Moreover, many current approaches rely on local retrieval databases; transitioning to web-based search systems further reduces training efficiency. Additionally, methods employing online search often demand significant computational resources, hindering the broader adoption of complex reasoning-based retrieval systems. This motivates the need for a solution that enables powerful reasoning with minimal training cost.
