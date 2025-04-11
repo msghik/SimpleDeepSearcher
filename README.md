@@ -45,7 +45,7 @@ To address these challenges, we first perform fine-grained filtering of existing
     - 0.5k: https://huggingface.co/datasets/RUC-AIBOX/0.5k-data-SimpleDeepSearcher
     - 0.8k: https://huggingface.co/datasets/RUC-AIBOX/0.8k-data-SimpleDeepSearcher
 - **GitHub**: [https://github.com/RUCAIBox/SimpleDeepSearcher](https://github.com/RUCAIBox/CyberSearcher)
-- **Notion**:
+- **Notion**: [https://sweet-walkover-f9b.notion.site/SimpleDeepSearcher-Deep-Information-Seeking-via-Web-Powered-Reasoning-Trajectory-Synthesis-1d1c27a43d7a801090d8ce1a75b2d6d0?pvs=4](https://sweet-walkover-f9b.notion.site/SimpleDeepSearcher-Deep-Information-Seeking-via-Web-Powered-Reasoning-Trajectory-Synthesis-1d1c27a43d7a801090d8ce1a75b2d6d0?pvs=4)
 
 # ✨ Key Insights
 1. **Data Synthesis Based on Real-World Web Environments**: We design a large-scale data synthesis pipeline grounded in authentic open-web environments, enhancing the diversity and realism of training corpora. This significantly improves the model’s ability to retrieve and integrate information in complex search tasks.
