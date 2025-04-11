@@ -37,14 +37,14 @@ To address these challenges, we first perform fine-grained filtering of existing
 **We release all training and inference code, along with model checkpoints. Additionally, we provide two highly efficient supervised fine-tuning datasets of 0.5k and 0.8k examples. The 0.5k dataset features more direct reasoning paths, while the 0.8k dataset includes richer reflection and rethinking processes. A detailed technical report will be released in the near future.**
 
 - **Models**:
-    - Qwen-7B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-SimpleDeepSearcher
-    - Qwen-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Qwen-7B-SimpleDeepSearcher
-    - Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher
-    - QwQ-32B-SimpleDeepSearcher: https://huggingface.co/XXsongLALA/QwQ-32B-SimpleDeepSearcher
+    - Qwen-7B-SimpleDeepSearcher: https://huggingface.co/RUC-AIBOX/Qwen-7B-SimpleDeepSearcher
+    - Qwen-32B-SimpleDeepSearcher: https://huggingface.co/RUC-AIBOX/Qwen-32B-SimpleDeepSearcher
+    - Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher: [https://huggingface.co/RUC-AIBOX/Dpsk-Distilled-Qwen-32B-SimpleDeepSearche](https://huggingface.co/RUC-AIBOX/Dpsk-Distilled-Qwen-32B-SimpleDeepSearcher)
+    - QwQ-32B-SimpleDeepSearcher: https://huggingface.co/RUC-AIBOX/QwQ-32B-SimpleDeepSearcher
 - **Training Data**:
-    - 0.5k: https://huggingface.co/datasets/XXsongLALA/0.5k-sft-data
-    - 0.8k: https://huggingface.co/datasets/XXsongLALA/0.8k-sft-data
-- **GitHub**: https://github.com/RUCAIBox/SimpleDeepSearcher
+    - 0.5k: https://huggingface.co/datasets/RUC-AIBOX/0.5k-data-SimpleDeepSearcher
+    - 0.8k: https://huggingface.co/datasets/RUC-AIBOX/0.8k-data-SimpleDeepSearcher
+- **GitHub**: [https://github.com/RUCAIBox/SimpleDeepSearcher](https://github.com/RUCAIBox/CyberSearcher)
 - **Notion**:
 
 # ✨ Key Insights
