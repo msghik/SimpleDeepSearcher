@@ -366,10 +366,10 @@ python eval/gpt_eval.py
 Please kindly cite our report if they are helpful for your research.
 
 ```
-@article{SimpleDeepSearcher,
+@article{sun2025simpledeepsearcher,
   title={SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis},
-  author={Shuang Sun*, Huatong Song*, Yuhao Wang, Ruiyang Ren, Jinhao Jiang, Junjie Zhang, Lei Fang, Zhongyuan Wang, Wayne Xin Zhao, Ji-Rong Wen},
-  url={https://github.com/RUCAIBox/SimpleDeepSearcher},
+  author={Sun, Shuang and Song, Huatong and Wang, Yuhao and Ren, Ruiyang and Jiang, Jinhao and Zhang, Junjie and Bai, Fei and Deng, Jia and Zhao, Wayne Xin and Liu, Zheng and others},
+  journal={arXiv preprint arXiv:2505.16834},
   year={2025}
 }
 ```
