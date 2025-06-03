@@ -60,7 +60,6 @@ def extract_snippet_with_context(full_text: str, snippet: str, context_chars: in
 
     Returns:
         Tuple[bool, str]: The first element indicates whether extraction was successful, the second element is the extracted context.
-    # 这个 extract_snippet_with_context 函数的作用是 从一段长文本中找到最符合给定片段（snippet）的句子，并返回包含该句子的一定上下文范围的文本。它的核心逻辑包括 文本预处理、句子匹配、F1 评分计算、上下文截取 等几个步骤。
     """
     try:
         full_text = full_text[:50000]
@@ -227,8 +226,6 @@ def google_web_search(query, subscription_key, endpoint, market='en-US', languag
 
     Returns:
         dict: JSON response of the search results. Returns None or raises an exception if the request times out.
-    函数的目标是使用 Bing Web Search API 执行搜索，并返回 JSON 格式的结果。
-    如果请求超时或出现其他问题，返回空字典（{}）或抛出异常
     """
     
     if exclude_urls:
@@ -306,34 +303,6 @@ def extract_pdf_text(url):
         return "Error: Request timed out after 20 seconds"
     except Exception as e:
         return f"Error: {str(e)}"
-
-# def extract_relevant_info(search_results):
-#     """
-#     Extract relevant information from Bing search results.
-
-#     Args:
-#         search_results (dict): JSON response from the Bing Web Search API.
-
-#     Returns:
-#         list: A list of dictionaries containing the extracted information.
-#     """
-#     useful_info = []
-    
-#     if 'webPages' in search_results and 'value' in search_results['webPages']: # value 通常是一个列表，包含了搜索结果的每个页面信息
-#         for id, result in enumerate(search_results['webPages']['value']):
-#             info = {
-#                 'id': id + 1,  # Increment id for easier subsequent operations 为每个结果分配一个 id，id + 1 是为了让 ID 从 1 开始，而不是从 0 开始。这对后续操作更直观
-#                 'title': result.get('name', ''), # 每个搜索结果中提取标题
-#                 'url': result.get('url', ''), # 每个搜索结果中提取 URL
-#                 'site_name': result.get('siteName', ''), # 每个搜索结果中提取站点名称
-#                 'date': result.get('datePublished', '').split('T')[0], # 提取搜索结果的发布时间
-#                 'snippet': result.get('snippet', ''),  # Remove HTML tags : 提取搜索结果的简短描述（即摘要或片段），result.get('snippet', '')。这里的 snippet 可能包含 HTML 标签，因此需要在后续的处理中可能会清除这些标签
-#                 # Add context content to the information
-#                 'context': ''  # Reserved field to be filled later
-#             }
-#             useful_info.append(info)
-    
-#     return useful_info
 
 def extract_relevant_info(search_results):
     """
