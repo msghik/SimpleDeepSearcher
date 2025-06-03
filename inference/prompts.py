@@ -1,5 +1,5 @@
 
-def get_multiqa_instruction(MAX_SEARCH_LIMIT): # 给出的样例是进行了两次搜索
+def get_multiqa_instruction(MAX_SEARCH_LIMIT):
     return (
         "You are a reasoning assistant with the ability to perform web searches to help "
         "you answer the user's question accurately. You have special tools:\n\n"
