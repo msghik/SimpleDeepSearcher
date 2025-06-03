@@ -1,3 +1,4 @@
+# Adapted from https://github.com/sunnynexus/Search-o1/blob/main/scripts/run_search_o1.py 
 import os
 import json
 import time
