@@ -418,29 +418,6 @@ def str2paras(s):
         return paras
 
 
-# if __name__ == "__main__":
-#     file_list = os.listdir('d:/pycharmfiles/chat')
-
-#     for file in file_list:
-#         if not file.endswith('post'):
-#             continue
-#         print(file)
-#         indir = os.path.join('d:/pycharmfiles/chat', file)
-#         outdir = os.path.join('d:/pycharmfiles/llm_re/nq/data', file)
-#         outstr = ""
-#         infile = open(indir, 'r', encoding='utf-8')
-#         for line in tqdm(infile.readlines()):
-#             d = json.loads(line)
-#             if 'Prediction' in d.keys():
-#                 d['Giveup'], d['EM'], d['F1'] =  deal_answer(d['Prediction'], d['reference'])
-#             if 'Post' in d.keys():
-#                 d['Post_Giveup'], d['Post_True']= deal_post(d['Post'])
-#             outstr += json.dumps(d) + '\n'
-#         infile.close()
-#         outfile = open(outdir, 'w', encoding='utf-8')
-#         outfile.write(outstr)
-#         outfile.close()
-
 
 def load_source(file):
     data = []
