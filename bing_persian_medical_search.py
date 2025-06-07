@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+from inference.credibility import mark_results
 
 persian_medical_thesaurus = {
     "فشار خون بالا": ["هایپرتانسیون", "پرفشاری خون", "افزایش فشار خون"],
@@ -45,7 +46,9 @@ def search_term(term: str, api_key: str = None, count: int = 5):
     synonyms = persian_medical_thesaurus.get(term)
     query_terms = synonyms if synonyms is not None else [term]
     query = " ".join(query_terms)
-    return bing_search(query, api_key, count)
+    results = bing_search(query, api_key, count)
+    mark_results(results)
+    return results
 
 
 if __name__ == "__main__":

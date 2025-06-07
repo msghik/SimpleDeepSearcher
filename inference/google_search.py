@@ -2,6 +2,7 @@
 import os
 import json
 import requests
+from .credibility import mark_results
 from requests.exceptions import Timeout
 from bs4 import BeautifulSoup
 from tqdm import tqdm
@@ -335,5 +336,6 @@ def extract_relevant_info(search_results):
             useful_info.append(info)
     else:
         print("No organic results found.")
+    useful_info = mark_results(useful_info)
     print(f"len of useful_info: {len(useful_info)}")
     return useful_info
