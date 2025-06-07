@@ -362,6 +362,15 @@ python -u inference/inference.py \
 python eval/gpt_eval.py
 ```
 
+## Persian Medical Bing Search
+
+This repository now includes `bing_persian_medical_search.py` for looking up Persian medical terms using the Bing Web Search API. The script expands a query with synonyms from a built-in thesaurus and retrieves relevant documents.
+
+```bash
+export BING_SEARCH_API_KEY=YOUR_API_KEY
+python bing_persian_medical_search.py "دیابت"
+```
+
 # 📄 Citation
 Please kindly cite our report if they are helpful for your research.
 
