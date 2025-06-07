@@ -381,3 +381,4 @@ This project is released under the [MIT License](LICENSE).
 # 📞 Contact
 
 For any questions or feedback, please reach out to us at [sunshuanguns@gmail.com](sunshuanguns@gmail.com) or [songhuatong123@ruc.edu.cn](songhuatong123@ruc.edu.cn).
+Minor documentation update.
