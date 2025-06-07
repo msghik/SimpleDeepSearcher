@@ -70,7 +70,9 @@ Predicted Answer: {prediction}
         reference_ans = "; ".join(reference_ans_ori)
         # print(reference_ans)
     else:
-        kill
+        raise ValueError(
+            f"Unsupported type for reference_ans_ori: {type(reference_ans_ori)}"
+        )
 
     if reference_ans ==False:
         reference_ans="no"
