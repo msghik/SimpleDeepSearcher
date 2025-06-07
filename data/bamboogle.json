@@ -3,6 +3,7 @@
         "Question": "Who was president of the United States in the year that Citibank was founded?",
         "source": "bamboogle",
         "id": "bamboogle_1",
+        "note": "update",
         "answer": [
             "james madison"
         ]
